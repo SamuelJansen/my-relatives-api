@@ -9,6 +9,6 @@ api:
             check_same_thread: False
 
 
-# swagger:
-#     schemes: [${api.server.scheme}]
-#     host: ${SWAGGER_HOST:${api.server.host}}:${api.server.port} 
+swagger:
+    schemes: [${api.server.scheme}]
+    host: ${SWAGGER_HOST:${api.server.host}}:${api.server.port} 

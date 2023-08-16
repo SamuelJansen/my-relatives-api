@@ -35,8 +35,8 @@ simple-accounts:
     user-one: ${USER_1_ACCOUNT_KEY}
 
 swagger:
-    schemes: [${api.server.scheme}]
-    host: ${SWAGGER_HOST:${api.server.host}}:${api.server.port}
+    # schemes: [${api.server.scheme}]
+    # host: ${SWAGGER_HOST:${api.server.host}}:${api.server.port}
     info:
         # title: ${api.name}
         # description: Credit Card Manager Api
