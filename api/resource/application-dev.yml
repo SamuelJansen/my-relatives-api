@@ -8,5 +8,7 @@ api:
 
 swagger:
     schemes: [https]
-    # host: ${SWAGGER_HOST:localhost}
+    host: ${SWAGGER_HOST:localhost}
     port: 80
+    info:
+        description: Credit Card Manager Api - Development
