@@ -3,8 +3,21 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
-ignore-this-file.txt
+local-config.yml
+*.db
+*.png
+*.mp3
+*.wav
+*-swagger.json
+example*.txt
+*example.txt
+*example.*
+*example*.*
+dummydata/
+temp/
+migrations.yml
+security.json
+*-security.json
 
 
 
