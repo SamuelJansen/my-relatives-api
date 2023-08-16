@@ -1,0 +1,41 @@
+print-status: False
+
+# active-environment: local, dell-development, dev
+active-environment: local ###- dev ###-
+active-pointed-environment: local ###- dev ###-
+
+api-host:
+    local: localhost
+    dell-development: api.data-explore.com
+    dev: api.data-explore.com
+
+swagger:
+    host: ${api-host.${active-environment}}
+
+rest-scheme:
+    local: http
+    dell-development: https
+    dev: https
+
+
+environment:
+    logs:
+        debug:
+            key: DEBUG
+            value: True
+        # wrapper:
+        #     key: WRAPPER
+        #     value: True
+        # log:
+        #     key: LOG
+        #     value: True
+        colors:
+            key: ENABLE_LOGS_WITH_COLORS
+            value: True
+    active-environment:
+        key: ACTIVE_ENVIRONMENT
+        value: ${active-environment}
+    swagger:
+        host:
+            key: SWAGGER_HOST
+            value: ${swagger.host}
