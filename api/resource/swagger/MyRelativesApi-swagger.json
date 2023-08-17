@@ -5,6 +5,13 @@
             "get": {
                 "parameters": [
                     {
+                        "name": "key",
+                        "type": "string",
+                        "in": "query",
+                        "required": false,
+                        "description": null
+                    },
+                    {
                         "name": "name",
                         "type": "string",
                         "in": "query",
@@ -31,9 +38,57 @@
                 }
             }
         },
+        "/person/all": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "keyList",
+                        "type": "string",
+                        "in": "query",
+                        "required": false,
+                        "description": null
+                    },
+                    {
+                        "name": "nameList",
+                        "type": "string",
+                        "in": "query",
+                        "required": false,
+                        "description": null
+                    }
+                ],
+                "tags": [
+                    "Person"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/PersonResponseDto"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/relatives": {
             "get": {
                 "parameters": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "in": "query",
+                        "required": false,
+                        "description": null
+                    },
                     {
                         "name": "name",
                         "type": "string",
@@ -56,6 +111,47 @@
                         "description": "successful operation",
                         "schema": {
                             "$ref": "#/definitions/RelativesResponseDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/relatives/all": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "keyList",
+                        "type": "string",
+                        "in": "query",
+                        "required": false,
+                        "description": null
+                    },
+                    {
+                        "name": "nameList",
+                        "type": "string",
+                        "in": "query",
+                        "required": false,
+                        "description": null
+                    }
+                ],
+                "tags": [
+                    "Relatives"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/RelativesResponseDto"
+                            }
                         }
                     }
                 }
@@ -132,12 +228,17 @@
         "PersonResponseDto": {
             "type": "object",
             "properties": {
+                "key": {
+                    "type": "object",
+                    "example": null
+                },
                 "name": {
                     "type": "object",
                     "example": null
                 }
             },
             "required": [
+                "key",
                 "name"
             ]
         },
@@ -153,6 +254,10 @@
                     "example": null
                 },
                 "husband": {
+                    "type": "object",
+                    "example": null
+                },
+                "key": {
                     "type": "object",
                     "example": null
                 },
@@ -177,6 +282,7 @@
                 "brotherList",
                 "father",
                 "husband",
+                "key",
                 "mother",
                 "name",
                 "sisterList",
@@ -204,12 +310,12 @@
     "tags": [
         {
             "name": "Person",
-            "description": "Person controller",
+            "description": "Person controller. Person controller",
             "externalDocs": null
         },
         {
             "name": "Relatives",
-            "description": "Relatives controller",
+            "description": "Relatives controller. Relatives controller",
             "externalDocs": null
         },
         {

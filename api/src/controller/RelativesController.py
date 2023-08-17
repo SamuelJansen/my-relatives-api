@@ -20,3 +20,20 @@ class RelativesController:
     )
     def get(self, params):
         return self.service.relatives.findRelatives(params), HttpStatus.OK
+
+
+@Controller(
+    url = '/relatives',
+    tag = 'Relatives',
+    description = 'Relatives controller'
+    , logRequest = True
+    , logResponse = True
+)
+class RelativesAllController:
+
+    @ControllerMethod(url = '/all',
+        requestParamClass=[RelativesDto.RelativesQueryAllDto],
+        responseClass=[[RelativesDto.RelativesResponseDto]]
+    )
+    def get(self, params):
+        return self.service.relatives.findAllRelatives(params), HttpStatus.OK

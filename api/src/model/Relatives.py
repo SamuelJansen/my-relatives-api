@@ -1,5 +1,6 @@
 class Relatives:
     def __init__(self, 
+        key = None,
         name = None,
         fatherName = None,
         motherName = None,
@@ -8,6 +9,7 @@ class Relatives:
         wifeName = None,
         husbandName = None
     ):
+        self.key = key
         self.name = name
         self.fatherName = fatherName
         self.motherName = motherName
